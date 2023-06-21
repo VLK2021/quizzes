@@ -1,0 +1,51 @@
+.homeComponent> h1 {
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--var-bg-color);
+    font-weight: bold;
+    font-size: 3.5rem;
+    text-shadow: 0.3rem 0.3rem 0.3rem black;
+}
+
+.form-block{
+    margin-top: 10rem;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+.form > select{
+    width: 65%;
+    padding: 0.5rem;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 1rem;
+    color: var(--var-color-text-select);
+}
+
+label{
+    text-transform: uppercase;
+    color: var(--var-bg-button);
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.form > button {
+    width: 65%;
+    padding: 0.5rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: 2s;
+    background: var(--var-bg-button);
+    color: var(--var-bg-color);
+    text-transform: uppercase;
+}
+
+.form > button:hover {
+    transform: scale(1.1, 1.1);
+}

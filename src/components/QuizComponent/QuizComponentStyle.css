@@ -1,0 +1,12 @@
+.quizComponent {
+    height: 100vh;
+}
+
+.quiz-block {
+    width: 65%;
+    min-height: 20rem;
+    background: var(--var-bg-quiz);
+    border-radius: 0.5rem;
+    box-shadow: 0.2rem 0.2rem 0.2rem gray;
+
+}
