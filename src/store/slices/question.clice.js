@@ -7,7 +7,6 @@ export const getQuestions = createAsyncThunk(
     async ({id, dif}, {rejectWithValue}) => {
         try {
             const questions = await quizService.getQuiz(id, dif);
-            console.log(questions);
             return questions
         } catch (e) {
             return rejectWithValue(e.message);
@@ -46,7 +45,7 @@ const questionSlice = createSlice({
             })
             .addCase(getQuestions.fulfilled, (state, action) => {
                 state.status = 'fulfilled'
-                state.questionArr = action.payload
+                state.questionArr = action.payload.results
             })
             .addCase(getQuestions.rejected, (state, action) => {
                 state.status = 'rejected'

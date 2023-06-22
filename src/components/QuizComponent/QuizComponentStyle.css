@@ -1,5 +1,10 @@
 .quizComponent {
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.3rem;
 }
 
 .quiz-block {
@@ -8,5 +13,43 @@
     background: var(--var-bg-quiz);
     border-radius: 0.5rem;
     box-shadow: 0.2rem 0.2rem 0.2rem gray;
+    padding: 0.5rem;
+}
 
+.quiz-name > h1, p {
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quiz-name > p {
+    margin: 0 0 0 0.6rem;
+    padding: 0;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--var-bg-button);
+}
+
+.btn-block{
+    justify-content: space-around;
+}
+
+.btn{
+    width: 10rem;
+    padding: 0.3rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    border-radius: 0.5rem;
+    background: var(--var-bg-button);
+    color: var(--var-bg-color);
+    cursor: pointer;
+    transition: 2s;
+}
+
+.btn:hover {
+    transform: scale(1.1, 1.1);
+    background: var(--var-bg-color);
+    color: var(--var-bg-button);
 }

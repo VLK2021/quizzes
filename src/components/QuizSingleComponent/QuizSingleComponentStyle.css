@@ -1,0 +1,16 @@
+.quizSingleComponent {
+padding: 1rem;
+}
+
+.question-title{
+    text-align: center;
+    color: var(--var-color-text-select);
+    font-weight: bold;
+    font-size: 1.5rem;
+    font-style: italic;
+    text-shadow: 0.1rem 0.1rem 0.1rem lightblue;
+}
+
+.answers-block{
+
+}
