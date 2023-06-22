@@ -1,0 +1,13 @@
+.answersComponent {
+    padding: 1rem;
+    margin-left: 2rem;
+}
+
+.answersComponent-block {
+    font-weight: bold;
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    color: var(--var-bg-button);
+    text-shadow: 0.2rem 0.2rem 0.2rem var(--var-bg-color);
+}
+

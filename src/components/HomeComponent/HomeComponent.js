@@ -49,7 +49,7 @@ const HomeComponent = () => {
                         }
                     </select>
 
-                    <button>go to quiz</button>
+                    <button>go to play quiz</button>
                 </form>
             </div>
         </div>

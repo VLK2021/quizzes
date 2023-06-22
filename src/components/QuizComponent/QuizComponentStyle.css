@@ -14,6 +14,7 @@
     border-radius: 0.5rem;
     box-shadow: 0.2rem 0.2rem 0.2rem gray;
     padding: 0.5rem;
+    overflow: hidden;
 }
 
 .quiz-name > h1, p {
@@ -32,7 +33,7 @@
 }
 
 .btn-block{
-    justify-content: space-around;
+    justify-content: center;
 }
 
 .btn{
@@ -52,4 +53,20 @@
     transform: scale(1.1, 1.1);
     background: var(--var-bg-color);
     color: var(--var-bg-button);
+}
+
+.stop{
+    margin-right: 5rem;
+}
+
+.result{
+    width: 14rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.next {
+    margin-left: 5rem;
 }
