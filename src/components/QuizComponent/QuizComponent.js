@@ -17,9 +17,8 @@ const QuizComponent = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [questionObj, setQuestionObj] = useState(null);
 
-    const [nameCategory, setNameCategory] =useState(null);
-    const [nameDifficulty, setNameDifficulty] =useState(null);
-
+    const [nameCategory, setNameCategory] = useState(null);
+    const [nameDifficulty, setNameDifficulty] = useState(null);
 
 
     useEffect(() => {
@@ -36,7 +35,7 @@ const QuizComponent = () => {
     const nextQuestion = useCallback(() => {
         if (counter < 10) {
             dispatch(statisticAction.changeCounter(counter + 1));
-            dispatch(statisticAction.changePercent((counter * 100)/ 10));
+            dispatch(statisticAction.changePercent((result * 100) / 10));
         }
         if (currentIndex < questionArr.length - 1) {
             setCurrentIndex((prevIndex) => prevIndex + 1);
@@ -50,9 +49,10 @@ const QuizComponent = () => {
         dispatch(statisticAction.changeResult(0));
         dispatch(statisticAction.changeCounter(1));
         dispatch(statisticAction.changePercent(0));
+        dispatch(statisticAction.changeCurrentTime(null));
+        dispatch(statisticAction.changeWrong(0));
         navigate('/');
     }, [navigate]);
-
 
 
     return (
@@ -62,6 +62,7 @@ const QuizComponent = () => {
                     <h1>Quiz:</h1>
                     <p>{nameCategory}</p>
                 </div>
+
                 <div className={'quiz-name flex'}>
                     <h1>Difficult:</h1>
                     <p>{nameDifficulty}</p>
@@ -80,7 +81,9 @@ const QuizComponent = () => {
 
             <div className={'flex width btn-block'}>
                 <button className={'btn stop'} onClick={stop}>stop</button>
+
                 <div className={'result'}>result: {result} / {questionArr?.length}</div>
+
                 <button className={'btn next'} onClick={nextQuestion}>NEXT</button>
             </div>
         </div>

@@ -1,3 +1,66 @@
 .statisticComponent {
+    padding: 1rem;
+}
 
+.statisticComponent-title {
+    font-weight: bold;
+    font-size: 4rem;
+    color: var(--var-bg-button);
+    text-shadow: 0.2rem 0.2rem 0.2rem var(--var-bg-color);
+    margin-top: 2rem;
+    text-decoration: underline;
+}
+
+.statisticComponent-info-block {
+    margin: 4rem 0;
+}
+
+.information {
+    width: 50%;
+    min-height: 20rem;
+    background: var(--var-bg-quiz);
+    border-radius: 0.5rem;
+    box-shadow: 0.2rem 0.2rem 0.2rem gray;
+    padding: 0.5rem;
+    overflow: hidden;
+}
+
+.text{
+    width: 17rem;
+    font-weight: bold;
+    font-size: 1.5rem;
+    font-style: italic;
+    margin-right: 4rem;
+    color: green;
+    text-transform: uppercase;
+    text-align: start;
+}
+
+.information > p {
+    color: var(--var-bg-button);
+    font-weight: bold;
+    font-size: 1.8rem;
+    margin-top: 1.5rem;
+}
+
+
+.statisticComponent-btn {
+    margin: 2rem 0;
+
+}
+
+.statisticComponent-btn > button {
+    width: 65%;
+    padding: 0.5rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: 2s;
+    background: var(--var-bg-button);
+    color: var(--var-bg-color);
+    text-transform: uppercase;
+}
+
+.statisticComponent-btn > button:hover {
+    transform: scale(1.1, 1.1);
 }

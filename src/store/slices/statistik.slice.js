@@ -6,6 +6,7 @@ const initialState = {
     wrong: 0,
     percent: 0,
     counter: 1,
+    currentTime: null,
 }
 
 const statisticSlice = createSlice({
@@ -24,13 +25,16 @@ const statisticSlice = createSlice({
         },
         changeWrong: (state, action) => {
             state.wrong = action.payload
+        },
+        changeCurrentTime: (state, action) => {
+            state.currentTime = action.payload
         }
     }
 });
 
 
-const {actions: {changeResult, changePercent, changeCounter, changeWrong}} = statisticSlice;
-const statisticAction = {changeResult, changePercent, changeCounter, changeWrong};
+const {actions: {changeResult, changePercent, changeCounter, changeWrong, changeCurrentTime}} = statisticSlice;
+const statisticAction = {changeResult, changePercent, changeCounter, changeWrong, changeCurrentTime};
 
 export {statisticAction};
 export default statisticSlice.reducer
