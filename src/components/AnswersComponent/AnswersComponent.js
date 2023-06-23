@@ -7,7 +7,7 @@ import './AnswersComponentStyle.css';
 import {statisticAction} from "../../store/slices/statistik.slice";
 
 
-const AnswersComponent = ({answerArray, correct_answer, time}) => {
+const AnswersComponent = ({answerArray, correct_answer, time, setIsSelected}) => {
     const {result, counter, wrong} = useSelector(store => store.statistic);
     const {register, setValue} = useForm();
     const dispatch = useDispatch();
@@ -36,6 +36,7 @@ const AnswersComponent = ({answerArray, correct_answer, time}) => {
         const selectedOption = e.target.value;
         setValue('radioOption', selectedOption);
         submit({radioOption: selectedOption});
+        setIsSelected(true);
     };
 
 
@@ -55,7 +56,6 @@ const AnswersComponent = ({answerArray, correct_answer, time}) => {
                     )
                 }
             </form>
-
         </div>
     );
 };

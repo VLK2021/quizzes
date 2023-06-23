@@ -1,4 +1,4 @@
-.homeComponent> h1 {
+.homeComponent > h1 {
     text-align: center;
     text-transform: uppercase;
     color: var(--var-bg-color);
@@ -7,18 +7,19 @@
     text-shadow: 0.3rem 0.3rem 0.3rem black;
 }
 
-.form-block{
+.form-block {
     margin-top: 10rem;
 }
 
-.form{
+.form {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 2rem;
 }
-.form > select{
+
+.form > select {
     width: 65%;
     padding: 0.5rem;
     font-style: italic;
@@ -27,14 +28,14 @@
     color: var(--var-color-text-select);
 }
 
-label{
+label {
     text-transform: uppercase;
     color: var(--var-bg-button);
     font-weight: bold;
     font-size: 1rem;
 }
 
-.form > button {
+.form > button, .btn-lucky > button {
     width: 65%;
     padding: 0.5rem;
     font-weight: bold;
@@ -46,6 +47,7 @@ label{
     text-transform: uppercase;
 }
 
-.form > button:hover {
+.form > button:hover, .btn-lucky > button:hover {
     transform: scale(1.1, 1.1);
 }
+

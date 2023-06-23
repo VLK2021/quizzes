@@ -4,7 +4,6 @@ import {createSlice} from "@reduxjs/toolkit";
 const initialState = {
     result: 0,
     wrong: 0,
-    percent: 0,
     counter: 1,
     currentTime: null,
 }
@@ -16,9 +15,6 @@ const statisticSlice = createSlice({
     reducers: {
         changeResult: (state, action) => {
             state.result = action.payload
-        },
-        changePercent: (state, action) => {
-            state.percent = action.payload
         },
         changeCounter: (state, action) => {
             state.counter = action.payload
@@ -33,8 +29,8 @@ const statisticSlice = createSlice({
 });
 
 
-const {actions: {changeResult, changePercent, changeCounter, changeWrong, changeCurrentTime}} = statisticSlice;
-const statisticAction = {changeResult, changePercent, changeCounter, changeWrong, changeCurrentTime};
+const {actions: {changeResult, changeCounter, changeWrong, changeCurrentTime}} = statisticSlice;
+const statisticAction = {changeResult, changeCounter, changeWrong, changeCurrentTime};
 
 export {statisticAction};
 export default statisticSlice.reducer

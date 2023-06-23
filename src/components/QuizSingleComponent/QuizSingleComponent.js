@@ -5,7 +5,7 @@ import './QuizSingleComponentStyle.css';
 import {AnswersComponent} from "../AnswersComponent/AnswersComponent";
 
 
-const QuizSingleComponent = ({questionObj, setNameCategory, setNameDifficulty}) => {
+const QuizSingleComponent = ({questionObj, setNameCategory, setNameDifficulty, setIsSelected}) => {
     const {
         category,
         correct_answer,
@@ -54,6 +54,7 @@ const QuizSingleComponent = ({questionObj, setNameCategory, setNameDifficulty}) 
                 {answerArray.length > 0 && <AnswersComponent answerArray={answerArray}
                                                              correct_answer={correct_answer}
                                                              time={time}
+                                                             setIsSelected={setIsSelected}
                 />}
             </div>
         </div>

@@ -7,16 +7,17 @@ import {statisticAction} from "../../store/slices/statistik.slice";
 
 
 const StatisticComponent = () => {
-    const {result, counter, wrong, percent, currentTime} = useSelector(store => store.statistic);
+    const {result, counter, wrong, currentTime} = useSelector(store => store.statistic);
+
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
     const goToStart = () => {
         dispatch(statisticAction.changeResult(0));
         dispatch(statisticAction.changeCounter(1));
-        dispatch(statisticAction.changePercent(0));
         dispatch(statisticAction.changeCurrentTime(null));
         dispatch(statisticAction.changeWrong(0));
+
         navigate('/')
     };
 
@@ -31,7 +32,7 @@ const StatisticComponent = () => {
                     <p><span className={'text'}>Correct answer:</span>{result}</p>
                     <p><span className={'text'}>Wrong answer:</span>{wrong}</p>
                     <p><span className={'text'}>Questions:</span>{counter}</p>
-                    <p><span className={'text'}>Interest:</span>{percent} %</p>
+                    <p><span className={'text'}>Interest:</span>{(result * 100) / 10} %</p>
                 </div>
             </div>
 

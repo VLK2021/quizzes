@@ -20,6 +20,8 @@ const QuizComponent = () => {
     const [nameCategory, setNameCategory] = useState(null);
     const [nameDifficulty, setNameDifficulty] = useState(null);
 
+    const [isSelected, setIsSelected] = useState(false);
+
 
     useEffect(() => {
         dispatch(getQuestions({id, dif}))
@@ -33,22 +35,21 @@ const QuizComponent = () => {
 
 
     const nextQuestion = useCallback(() => {
-        if (counter < 10) {
-            dispatch(statisticAction.changeCounter(counter + 1));
-            dispatch(statisticAction.changePercent((result * 100) / 10));
-        }
         if (currentIndex < questionArr.length - 1) {
             setCurrentIndex((prevIndex) => prevIndex + 1);
             setQuestionObj(questionArr[currentIndex]);
         }
+        if (counter < 10) {
+            dispatch(statisticAction.changeCounter(counter + 1));
+        }
 
+        setIsSelected(false);
     }, [counter, currentIndex, questionArr]);
 
 
     const stop = useCallback(() => {
         dispatch(statisticAction.changeResult(0));
         dispatch(statisticAction.changeCounter(1));
-        dispatch(statisticAction.changePercent(0));
         dispatch(statisticAction.changeCurrentTime(null));
         dispatch(statisticAction.changeWrong(0));
         navigate('/');
@@ -76,6 +77,7 @@ const QuizComponent = () => {
                 {questionObj && <QuizSingleComponent questionObj={questionObj}
                                                      setNameCategory={setNameCategory}
                                                      setNameDifficulty={setNameDifficulty}
+                                                     setIsSelected={setIsSelected}
                 />}
             </div>
 
@@ -84,7 +86,7 @@ const QuizComponent = () => {
 
                 <div className={'result'}>result: {result} / {questionArr?.length}</div>
 
-                <button className={'btn next'} onClick={nextQuestion}>NEXT</button>
+                <button className={'btn next'} onClick={nextQuestion} disabled={!isSelected}>NEXT</button>
             </div>
         </div>
     );

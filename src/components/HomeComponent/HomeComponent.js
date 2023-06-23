@@ -28,6 +28,19 @@ const HomeComponent = () => {
         navigate('/quiz')
     }
 
+    //логіка рандомного вибору вікторини
+    const randomQuiz = () => {
+        const randomIndexCategory = Math.floor(Math.random() * categoriesArr.length);
+        const randomObjectCategory = categoriesArr[randomIndexCategory];
+        dispatch(questionAction.changeId(randomObjectCategory.id));
+
+        const randomIndexDifficult = Math.floor(Math.random() * difficultArray.length);
+        const randomObjectDifficult = difficultArray[randomIndexDifficult];
+        dispatch(questionAction.changeDif(randomObjectDifficult.name));
+
+        navigate('/quiz')
+    }
+
     return (
         <div className={'homeComponent width'}>
             <h1 className={'width margin-top'}>quizzes</h1>
@@ -51,6 +64,10 @@ const HomeComponent = () => {
 
                     <button>go to play quiz</button>
                 </form>
+            </div>
+
+            <div className={'btn-lucky margin-top flex'}>
+                <button onClick={randomQuiz}>I'm lucky</button>
             </div>
         </div>
     );
